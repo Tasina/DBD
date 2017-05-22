@@ -1,4 +1,5 @@
 c:\users\tasin\documents\visual studio 2015\Projects\DBD\DBD\bin\Debug\DBD.exe.config
+<<<<<<< HEAD
 C:\Users\Tasin\Desktop\EksamOpgaver\DBD\DBD\bin\Debug\DBD.exe.config
 C:\Users\Tasin\Desktop\EksamOpgaver\DBD\DBD\bin\Debug\DBD.exe
 C:\Users\Tasin\Desktop\EksamOpgaver\DBD\DBD\bin\Debug\DBD.pdb
@@ -8,3 +9,7 @@ C:\Users\Tasin\Desktop\EksamOpgaver\DBD\DBD\obj\Debug\DBD.csproj.GenerateResourc
 C:\Users\Tasin\Desktop\EksamOpgaver\DBD\DBD\obj\Debug\DBD.exe
 C:\Users\Tasin\Desktop\EksamOpgaver\DBD\DBD\obj\Debug\DBD.pdb
 C:\Users\Tasin\Desktop\EksamOpgaver\DBD\DBD\obj\Debug\DBD.Main.resources
+=======
+C:\Users\Hardy Drachmann\Documents\Visual Studio 2015\Projects\exam_DBD\DBD\bin\Debug\DBD.exe.config
+>>>>>>> eb99a50028a262a12366cdcff0a2fd01bc722a6e
+C:\Users\Tasin\Desktop\EksamOpgaver\DBD\DBD\obj\Debug\DBD.Form1.resources
