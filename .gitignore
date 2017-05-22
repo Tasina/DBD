@@ -22,6 +22,12 @@ bld/
 [Bb]in/
 [Oo]bj/
 packages/
+bin/Debug
+obj/Debug
+DBD/bin/Debug
+DBD/obj/Debug
+DBD/DBD/bin/Debug
+DBD/DBD/obj/Debug
 
 # Visual Studo 2015 cache/options directory
 .vs/
