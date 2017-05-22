@@ -1,0 +1,7 @@
+USE [master]
+
+GO
+
+RESTORE DATABASE exam_DBD
+FROM DISK = '.\exam_DBD.bak'
+WITH REPLACE	 
