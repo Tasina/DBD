@@ -1,1 +1,10 @@
 c:\users\tasin\documents\visual studio 2015\Projects\DBD\DBD\bin\Debug\DBD.exe.config
+C:\Users\Tasin\Desktop\EksamOpgaver\DBD\DBD\bin\Debug\DBD.exe.config
+C:\Users\Tasin\Desktop\EksamOpgaver\DBD\DBD\bin\Debug\DBD.exe
+C:\Users\Tasin\Desktop\EksamOpgaver\DBD\DBD\bin\Debug\DBD.pdb
+C:\Users\Tasin\Desktop\EksamOpgaver\DBD\DBD\obj\Debug\DBD.csprojResolveAssemblyReference.cache
+C:\Users\Tasin\Desktop\EksamOpgaver\DBD\DBD\obj\Debug\DBD.Properties.Resources.resources
+C:\Users\Tasin\Desktop\EksamOpgaver\DBD\DBD\obj\Debug\DBD.csproj.GenerateResource.Cache
+C:\Users\Tasin\Desktop\EksamOpgaver\DBD\DBD\obj\Debug\DBD.exe
+C:\Users\Tasin\Desktop\EksamOpgaver\DBD\DBD\obj\Debug\DBD.pdb
+C:\Users\Tasin\Desktop\EksamOpgaver\DBD\DBD\obj\Debug\DBD.Main.resources
