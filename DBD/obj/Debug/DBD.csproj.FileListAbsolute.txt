@@ -10,8 +10,6 @@ C:\Users\Tasin\Desktop\EksamOpgaver\DBD\DBD\obj\Debug\DBD.pdb
 C:\Users\Hardy Drachmann\Documents\Visual Studio 2015\Projects\exam_DBD\DBD\bin\Debug\DBD.exe.config
 C:\Users\Hardy Drachmann\Documents\Visual Studio 2015\Projects\exam_DBD\DBD\bin\Debug\DBD.exe
 C:\Users\Hardy Drachmann\Documents\Visual Studio 2015\Projects\exam_DBD\DBD\bin\Debug\DBD.pdb
-C:\Users\Hardy Drachmann\Documents\Visual Studio 2015\Projects\exam_DBD\DBD\bin\Debug\EntityFramework.dll
-C:\Users\Hardy Drachmann\Documents\Visual Studio 2015\Projects\exam_DBD\DBD\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Hardy Drachmann\Documents\Visual Studio 2015\Projects\exam_DBD\DBD\bin\Debug\EntityFramework.xml
 C:\Users\Hardy Drachmann\Documents\Visual Studio 2015\Projects\exam_DBD\DBD\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Hardy Drachmann\Documents\Visual Studio 2015\Projects\exam_DBD\DBD\obj\Debug\DBD.Main.resources
