@@ -278,9 +278,9 @@
             this.label7.Location = new System.Drawing.Point(10, 477);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(91, 28);
+            this.label7.Size = new System.Drawing.Size(143, 28);
             this.label7.TabIndex = 46;
-            this.label7.Text = "DB State:";
+            this.label7.Text = "SELECT query:";
             // 
             // Main
             // 

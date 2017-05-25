@@ -1,4 +1,4 @@
-
+﻿
 using DBD.DAL.Models;
 using System;
 using System.Collections.Generic;
@@ -32,7 +32,7 @@ namespace DBD
         {
             if(users.Count < 1)
             {
-                MessageBox.Show("No users found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("user not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             lbDBstate.Items.Clear();
@@ -45,6 +45,7 @@ namespace DBD
         private void btnRecreate_Click(object sender, EventArgs e)
         {
             dao.RecreateDB();
+            PopulateDropdown();
         }
 
 
