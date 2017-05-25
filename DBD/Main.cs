@@ -14,19 +14,27 @@ namespace DBD
         public Main()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             dao.RecreateDB();
             PopulateDropdown();
-
             cbDropdown.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         public void PopulateDropdown()
         {
             cbDropdown.Items.Clear();
-            foreach (var user in dao.GetUsers())
+            if(dao.GetUsers().Count < 1)
             {
-                cbDropdown.Items.Add(user.Id + " - " + user.Username);
+                cbDropdown.Text = "No Users";
+            }else
+            {
+                foreach (var user in dao.GetUsers())
+                {
+                    cbDropdown.Items.Add(user.Id + " - " + user.Username);
+                }
+                cbDropdown.SelectedIndex = 0;
             }
+
         }
 
         public void PopulateListBox(List<User> users)
@@ -66,6 +74,7 @@ namespace DBD
             }
         }
 
+
         private void btnRegularExpression_Click(object sender, EventArgs e)
         {
             string text = tbRegularExpression.Text;
@@ -87,6 +96,17 @@ namespace DBD
 
             PopulateDropdown();
             PopulateListBox(users);
+        }
+
+        private void btnPreparedStatement_Click(object sender, EventArgs e)
+        {
+            if(tbPreparedStatement.Text.Length > 0)
+            {
+                List<User> users = dao.PreparedStatement(tbPreparedStatement.Text);
+                tbPreparedStatement.Clear();
+                PopulateDropdown();
+                PopulateListBox(users);
+            }
         }
     }
 }
