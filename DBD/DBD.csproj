@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\DBD_DAO.cs" />
     <Compile Include="DAL\DBD_UsersContext.cs" />
     <Compile Include="DAL\DBD_UsersDbInitializer.cs" />
     <Compile Include="DAL\Models\User.cs" />

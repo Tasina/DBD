@@ -199,7 +199,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel1.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.panel1.Location = new System.Drawing.Point(-34, 338);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
@@ -208,7 +208,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel3.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.panel3.Location = new System.Drawing.Point(-34, 449);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
@@ -220,7 +220,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(468, 573);
+            this.label1.Location = new System.Drawing.Point(462, 573);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 20);
@@ -241,6 +241,7 @@
             this.btnRecreate.Size = new System.Drawing.Size(75, 75);
             this.btnRecreate.TabIndex = 43;
             this.btnRecreate.UseVisualStyleBackColor = false;
+            this.btnRecreate.Click += new System.EventHandler(this.btnRecreate_Click);
             // 
             // btnPreparedStatement
             // 
