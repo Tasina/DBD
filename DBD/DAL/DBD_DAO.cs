@@ -8,8 +8,8 @@ public class DBD_DAO
 {
     // Insert your connection string to use below:
     private string connectionString =
-      @"Server=Y50-70\DEV;Database=Master;User ID=sa;Password=diezel(VH4)";
-    //@"Server=RLXCW\DEV;Database=Master;User Id=sa;Password=hej123";
+    //@"Server=Y50-70\DEV;Database=Master;User ID=sa;Password=diezel(VH4)";
+    @"Server=RLXCW\DEV;Database=Master;User Id=sa;Password=hej123";
     //@"Server=Y50-70\DEV;Database=Master;User ID=sa;Password=diezel(VH4)";
 
 
@@ -33,9 +33,10 @@ public class DBD_DAO
         using (SqlConnection conn = new SqlConnection(connectionString))
         {
             conn.Open();
-            string dropAndRecreate =
+            string drop =
                 "IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'DBD_Users') " +
-                "CREATE DATABASE DBD_Users " +
+                "CREATE DATABASE DBD_Users ";
+            string recreate =
                 "USE DBD_Users " +
                 "IF OBJECT_ID ('Users', 'U') IS NOT NULL " +
                 "DROP TABLE Users " +
@@ -43,10 +44,15 @@ public class DBD_DAO
                 "INSERT INTO[Users] VALUES('Tasin', 1) " +
                 "INSERT INTO[Users] VALUES('Rasmus', 2) " +
                 "INSERT INTO[Users] VALUES('Hardy', 3)";
-            using (SqlCommand command = new SqlCommand(dropAndRecreate, conn))
+
+            using (SqlCommand dropCommand = new SqlCommand(drop, conn))
             {
-                command.ExecuteNonQuery();
-                conn.Close();
+                dropCommand.ExecuteNonQuery();
+                using (SqlCommand createcommand = new SqlCommand(recreate, conn))
+                {
+                    createcommand.ExecuteNonQuery();
+                    conn.Close();
+                }
             }
         }
     }
