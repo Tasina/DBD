@@ -2,6 +2,7 @@
 using DBD.DAL.Models;
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace DBD
@@ -45,6 +46,10 @@ namespace DBD
         private void btnRecreate_Click(object sender, EventArgs e)
         {
             dao.RecreateDB();
+            tbRegularExpression.Clear();
+            tbSQLInjection.Clear();
+            tbPreparedStatement.Clear();
+            tbStoredProcedure.Clear();
             PopulateDropdown();
         }
 
@@ -56,10 +61,32 @@ namespace DBD
             if (injectionString.Length > 0)
             {
                 List<User> users = dao.SQLinjection(injectionString);
-                tbSQLInjection.Clear();
                 PopulateDropdown();
                 PopulateListBox(users);
             }
+        }
+
+        private void btnRegularExpression_Click(object sender, EventArgs e)
+        {
+            string text = tbRegularExpression.Text;
+
+            Regex regex = new Regex("\\D.+");
+            text = regex.Replace(text, "");
+            tbRegularExpression.Text = text;
+
+            List<User> users = dao.SQLinjection(text);
+            PopulateDropdown();
+            PopulateListBox(users);
+        }
+
+        private void btnStoredProcedure_Click(object sender, EventArgs e)
+        {
+            string text = tbStoredProcedure.Text;
+
+            List<User> users = dao.StoredProcedure(text);
+
+            PopulateDropdown();
+            PopulateListBox(users);
         }
     }
 }

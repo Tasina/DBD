@@ -127,6 +127,7 @@
             this.btnRegularExpression.Size = new System.Drawing.Size(50, 50);
             this.btnRegularExpression.TabIndex = 31;
             this.btnRegularExpression.UseVisualStyleBackColor = false;
+            this.btnRegularExpression.Click += new System.EventHandler(this.btnRegularExpression_Click);
             // 
             // label6
             // 
@@ -162,6 +163,7 @@
             this.btnStoredProcedure.Size = new System.Drawing.Size(50, 50);
             this.btnStoredProcedure.TabIndex = 34;
             this.btnStoredProcedure.UseVisualStyleBackColor = false;
+            this.btnStoredProcedure.Click += new System.EventHandler(this.btnStoredProcedure_Click);
             // 
             // btnSQLInjection
             // 
