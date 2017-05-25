@@ -18,12 +18,23 @@ namespace DBD
         {
             InitializeComponent();
             SeedDB();
+            SetupDropdown();
         }
 
         public void SeedDB()
         {
             DBD_UsersContext dbContext = new DBD_UsersContext();
             dbContext.Users.FirstOrDefault();
+        }
+
+        public void SetupDropdown()
+        {
+            DBD_DAO dao = new DBD_DAO();
+            foreach(var user in dao.GetUsers())
+            {
+                cbDropdown.Items.Add(user);
+            }
+            cbDropdown.SelectedIndex = 0;
         }
 
         private void btnRecreate_Click(object sender, EventArgs e)
