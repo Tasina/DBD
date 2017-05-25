@@ -17,18 +17,13 @@ namespace DBD
         public Main()
         {
             InitializeComponent();
-            getAll();
+            SeedDB();
         }
 
-        public void getAll()
+        public void SeedDB()
         {
-            using (DBD_UsersContext dbdContext = new DBD_UsersContext())
-            {
-                foreach (var user in dbdContext.Users)
-                {
-                    lbDatabaseItems.Items.Add(user.FirstName + " " + user.LastName + ", " + user.Address );
-                }
-            }
+            DBD_UsersContext dbContext = new DBD_UsersContext();
+            dbContext.Users.FirstOrDefault();
         }
     }
 }

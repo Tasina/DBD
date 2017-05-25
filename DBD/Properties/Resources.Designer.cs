@@ -63,9 +63,9 @@ namespace DBD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap app_db_pic {
+        internal static System.Drawing.Bitmap app_wallpaper {
             get {
-                object obj = ResourceManager.GetObject("app_db_pic", resourceCulture);
+                object obj = ResourceManager.GetObject("app_wallpaper", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,19 @@ namespace DBD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap app_db_pic1 {
+        internal static System.Drawing.Bitmap user_add {
             get {
-                object obj = ResourceManager.GetObject("app_db_pic1", resourceCulture);
+                object obj = ResourceManager.GetObject("user_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap users_delete {
+            get {
+                object obj = ResourceManager.GetObject("users_delete", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

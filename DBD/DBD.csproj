@@ -91,13 +91,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\db.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\app_db_pic.png" />
+    <None Include="Resources\app_wallpaper.jpg" />
+    <Content Include="Resources\form_db_icon.ico" />
+    <Content Include="Resources\users_delete.png" />
+    <Content Include="Resources\user_add.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
