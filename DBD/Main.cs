@@ -26,7 +26,7 @@ namespace DBD
             {
                 foreach (var user in dbdContext.Users)
                 {
-                    listBox1.Items.Add(user.FirstName + " " + user.LastName + " " + user.Address );
+                    lbUsers.Items.Add(user.FirstName + " " + user.LastName + " " + user.Address );
                 }
             }
         }

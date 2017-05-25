@@ -50,7 +50,7 @@
             this.btnReCreate = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lbUsers = new System.Windows.Forms.ListBox();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -259,15 +259,15 @@
             this.panel5.Size = new System.Drawing.Size(302, 5);
             this.panel5.TabIndex = 43;
             // 
-            // listBox1
+            // lbUsers
             // 
-            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.listBox1.Enabled = false;
-            this.listBox1.Location = new System.Drawing.Point(685, 81);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(293, 327);
-            this.listBox1.TabIndex = 45;
+            this.lbUsers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbUsers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbUsers.Enabled = false;
+            this.lbUsers.Location = new System.Drawing.Point(685, 81);
+            this.lbUsers.Name = "lbUsers";
+            this.lbUsers.Size = new System.Drawing.Size(293, 327);
+            this.lbUsers.TabIndex = 45;
             // 
             // btnRefresh
             // 
@@ -286,7 +286,7 @@
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(990, 547);
             this.Controls.Add(this.btnRefresh);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lbUsers);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.label1);
@@ -340,7 +340,7 @@
         private System.Windows.Forms.Button btnReCreate;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lbUsers;
         private System.Windows.Forms.Button btnRefresh;
     }
 }
