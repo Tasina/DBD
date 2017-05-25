@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace DBD
@@ -31,7 +32,9 @@ namespace DBD
         private void btnSQLInjection_Click(object sender, EventArgs e)
         {
             string injectionString = tbSQLInjection.Text;
-            dao.SQLinjection(injectionString);
+            if (injectionString.Length > 0)
+                dao.SQLinjection(injectionString);
+            tbSQLInjection.Clear();
         }
     }
 }

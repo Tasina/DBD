@@ -8,8 +8,8 @@ public class DBD_DAO
 {
     // Insert your connection string to use below:
     private string connectionString =
-    //@"Server=Y50-70\DEV;Database=Master;User ID=sa;Password=diezel(VH4)";
-    @"Server=RLXCW\DEV;Database=Master;User Id=sa;Password=hej123";
+    @"Server=Y50-70\DEV;Database=Master;User ID=sa;Password=diezel(VH4)";
+    //@"Server=RLXCW\DEV;Database=Master;User Id=sa;Password=hej123";
     //@"Server=Y50-70\DEV;Database=Master;User ID=sa;Password=diezel(VH4)";
 
 
@@ -19,7 +19,8 @@ public class DBD_DAO
         {
             conn.Open();
 
-            string selectInjection = "SELECT * FROM [Users] WHERE UserId = " + injectionString;
+            string selectInjection = "USE DBD_Users " +
+                                     "SELECT * FROM [Users] WHERE UserId = " + injectionString;
             using (SqlCommand command = new SqlCommand(selectInjection, conn))
             {
                 command.ExecuteNonQuery();
