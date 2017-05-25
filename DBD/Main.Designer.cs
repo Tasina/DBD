@@ -47,6 +47,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnRecreate = new System.Windows.Forms.Button();
             this.btnPreparedStatement = new System.Windows.Forms.Button();
+            this.lbDBstate = new System.Windows.Forms.ListBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tbStoredProcedure
@@ -174,6 +176,7 @@
             this.btnSQLInjection.Size = new System.Drawing.Size(50, 50);
             this.btnSQLInjection.TabIndex = 36;
             this.btnSQLInjection.UseVisualStyleBackColor = false;
+            this.btnSQLInjection.Click += new System.EventHandler(this.btnSQLInjection_Click);
             // 
             // label5
             // 
@@ -220,14 +223,13 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(462, 573);
+            this.label1.Location = new System.Drawing.Point(471, 587);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 20);
             this.label1.TabIndex = 44;
             this.label1.Text = "Recreate";
             // 
-
             // btnRecreate
             // 
             this.btnRecreate.BackColor = System.Drawing.Color.Transparent;
@@ -236,7 +238,7 @@
             this.btnRecreate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRecreate.FlatAppearance.BorderSize = 0;
             this.btnRecreate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRecreate.Location = new System.Drawing.Point(472, 494);
+            this.btnRecreate.Location = new System.Drawing.Point(481, 508);
             this.btnRecreate.Margin = new System.Windows.Forms.Padding(4);
             this.btnRecreate.Name = "btnRecreate";
             this.btnRecreate.Size = new System.Drawing.Size(75, 75);
@@ -258,15 +260,38 @@
             this.btnPreparedStatement.TabIndex = 26;
             this.btnPreparedStatement.UseVisualStyleBackColor = false;
             // 
+            // lbDBstate
+            // 
+            this.lbDBstate.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lbDBstate.FormattingEnabled = true;
+            this.lbDBstate.ItemHeight = 16;
+            this.lbDBstate.Location = new System.Drawing.Point(15, 508);
+            this.lbDBstate.Name = "lbDBstate";
+            this.lbDBstate.Size = new System.Drawing.Size(440, 100);
+            this.lbDBstate.TabIndex = 45;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(10, 480);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(90, 25);
+            this.label7.TabIndex = 46;
+            this.label7.Text = "DB State";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
             this.BackColor = System.Drawing.Color.DimGray;
             this.BackgroundImage = global::DBD.Properties.Resources.app_wallpaper;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(569, 618);
+            this.ClientSize = new System.Drawing.Size(569, 639);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lbDBstate);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRecreate);
             this.Controls.Add(this.panel3);
@@ -314,6 +339,8 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnRecreate;
+        private System.Windows.Forms.ListBox lbDBstate;
+        private System.Windows.Forms.Label label7;
     }
 }
 

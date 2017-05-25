@@ -12,31 +12,17 @@ public class DBD_DAO
     //private string connectionRasmus = @"Server=Y50-70\DEV;Database=DBD_Users_Database;User ID=sa;Password=diezel(VH4)";
 
 
-    public bool AddDocument(string documentToAdd)
+    public void SQLinjection(string injectionString)
     {
         using (SqlConnection conn = new SqlConnection(connectionTasin))
         {
             conn.Open();
 
-            string insert = "INSERT INTO Document VALUES(@FullName, @DateCreated)";
-            using (SqlCommand command = new SqlCommand(insert, conn))
+            string selectInjection = "SELECT * FROM [Users] WHERE UserId = " + injectionString;
+            using (SqlCommand command = new SqlCommand(selectInjection, conn))
             {
-                SqlParameter documentNameParam = new SqlParameter("@FullName", SqlDbType.NVarChar);
-                documentNameParam.Value = documentToAdd;
-                command.Parameters.Add(documentNameParam);
-
-                SqlParameter documentDateParam = new SqlParameter("@DateCreated", SqlDbType.Date);
-                documentDateParam.Value = DateTime.Now;
-                command.Parameters.Add(documentDateParam);
-
-                int affectedRows = command.ExecuteNonQuery();
-                if (affectedRows > 0)
-                {
-                    conn.Close();
-                    return true;
-                }
+                command.ExecuteNonQuery();
                 conn.Close();
-                return false;
             }
         }
     }
@@ -47,10 +33,10 @@ public class DBD_DAO
         {
             conn.Open();
             string dropAndRecreate = "DROP TABLE Users " +
-                                     "CREATE TABLE [Users](Username nvarchar(50)) " +
-                                     "INSERT INTO [Users] VALUES ('Tasin') " +
-                                     "INSERT INTO [Users] VALUES ('Rasmus') " +
-                                     "INSERT INTO [Users] VALUES ('Hardy')";
+                                     "CREATE TABLE [Users](Username nvarchar(50), UserId int) " +
+                                     "INSERT INTO [Users] VALUES ('Tasin', 1) " +
+                                     "INSERT INTO [Users] VALUES ('Rasmus', 2) " +
+                                     "INSERT INTO [Users] VALUES ('Hardy', 3)";
             using (SqlCommand command = new SqlCommand(dropAndRecreate, conn))
             {
                 command.ExecuteNonQuery();
