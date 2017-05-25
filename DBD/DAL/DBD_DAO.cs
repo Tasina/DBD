@@ -13,8 +13,9 @@ public class DBD_DAO
     //@"Server=Y50-70\DEV;Database=Master;User ID=sa;Password=diezel(VH4)";
 
 
-    public void SQLinjection(string injectionString)
+    public List<User> SQLinjection(string injectionString)
     {
+        List<User> users = new List<User>();
         using (SqlConnection conn = new SqlConnection(connectionString))
         {
             conn.Open();
@@ -22,9 +23,19 @@ public class DBD_DAO
             string selectInjection = "SELECT * FROM [Users] WHERE UserId = " + injectionString;
             using (SqlCommand command = new SqlCommand(selectInjection, conn))
             {
-                command.ExecuteNonQuery();
+                using (SqlDataReader dr = command.ExecuteReader())
+                {
+                    if (dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            users.Add(new User() { Id = dr.GetInt32(1), Username = dr.GetString(0) } );
+                        }
+                    }
+                }
                 conn.Close();
             }
+            return users;
         }
     }
 
@@ -57,9 +68,9 @@ public class DBD_DAO
         }
     }
 
-    public List<string> GetUsers()
+    public List<User> GetUsers()
     {
-        List<string> AllUsers = new List<string>();
+        List<User> AllUsers = new List<User>();
 
         using (SqlConnection conn = new SqlConnection(connectionString))
         {
@@ -75,7 +86,7 @@ public class DBD_DAO
                     {
                         while (dr.Read())
                         {
-                            AllUsers.Add(dr.GetString(0));
+                            AllUsers.Add(new User() { Id = dr.GetInt32(1), Username = dr.GetString(0) });
                         }
                     }
                 }
@@ -85,6 +96,41 @@ public class DBD_DAO
         }
     }
 
+    public List<string> GetSingleUser(int id)
+    {
+        List<string> userList = new List<string>();
+        using (SqlConnection conn = new SqlConnection(connectionString))
+        {
+            conn.Open();
+
+            string getUser = "SELECT * FROM [Users] WHERE UserId = " + id;
+            using (SqlCommand command = new SqlCommand(getUser, conn))
+            {
+                using (SqlDataReader dr = command.ExecuteReader())
+                {
+                    if (dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            userList.Add(dr.GetString(0));
+                        }
+                    }
+                }
+                conn.Close();
+            }
+            return userList;
+        }
+        
+    }
+
+
+
+
+
+
+
+
+    //Prepared statement
     public void PreparedStatement_Unprotected(string username)
     {
         List<string> AllUsers = new List<string>();

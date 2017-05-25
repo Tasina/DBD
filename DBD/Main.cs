@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DBD.DAL.Models;
+using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace DBD
@@ -11,7 +13,27 @@ namespace DBD
         {
             InitializeComponent();
             dao.RecreateDB();
-            SetupDropdown();
+            PopulateDropdown();
+            
+            cbDropdown.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        public void PopulateDropdown()
+        {
+            foreach (var user in dao.GetUsers())
+            {
+                cbDropdown.Items.Add(user.Id + " - " + user.Username);
+            }
+            cbDropdown.SelectedIndex = 0;
+        }
+
+        public void PopulateListBox(List<User> users)
+        {
+            foreach (var user in users)
+            {
+                lbDBstate.Items.Add(user.Id + " - " + user.Username);
+            }
+            cbDropdown.SelectedIndex = 0;
         }
 
         private void btnRecreate_Click(object sender, EventArgs e)
@@ -19,19 +41,13 @@ namespace DBD
             dao.RecreateDB();
         }
 
-        public void SetupDropdown()
-        {
-            foreach (var user in dao.GetUsers())
-            {
-                cbDropdown.Items.Add(user);
-            }
-            cbDropdown.SelectedIndex = 0;
-        }
+
 
         private void btnSQLInjection_Click(object sender, EventArgs e)
         {
             string injectionString = tbSQLInjection.Text;
-            dao.SQLinjection(injectionString);
+            List<User> users = dao.SQLinjection(injectionString);
+            PopulateListBox(users);
         }
     }
 }
