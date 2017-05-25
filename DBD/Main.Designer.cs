@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.tbStoredProcedure = new System.Windows.Forms.TextBox();
             this.tbRegularExpression = new System.Windows.Forms.TextBox();
             this.tbPreparedStatement = new System.Windows.Forms.TextBox();
-            this.btnPreparedStatement = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,137 +42,148 @@
             this.btnSQLInjection = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.cbDropdown = new System.Windows.Forms.ComboBox();
-            this.btnDropDown = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnReCreate = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.lbUsers = new System.Windows.Forms.ListBox();
-            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnRecreate = new System.Windows.Forms.Button();
+            this.btnPreparedStatement = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbStoredProcedure
             // 
             this.tbStoredProcedure.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbStoredProcedure.Location = new System.Drawing.Point(164, 276);
+            this.tbStoredProcedure.Location = new System.Drawing.Point(15, 289);
+            this.tbStoredProcedure.Margin = new System.Windows.Forms.Padding(4);
             this.tbStoredProcedure.Name = "tbStoredProcedure";
-            this.tbStoredProcedure.Size = new System.Drawing.Size(350, 26);
+            this.tbStoredProcedure.Size = new System.Drawing.Size(465, 30);
             this.tbStoredProcedure.TabIndex = 22;
             // 
             // tbRegularExpression
             // 
             this.tbRegularExpression.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbRegularExpression.Location = new System.Drawing.Point(164, 215);
+            this.tbRegularExpression.Location = new System.Drawing.Point(15, 214);
+            this.tbRegularExpression.Margin = new System.Windows.Forms.Padding(4);
             this.tbRegularExpression.Name = "tbRegularExpression";
-            this.tbRegularExpression.Size = new System.Drawing.Size(350, 26);
+            this.tbRegularExpression.Size = new System.Drawing.Size(465, 30);
             this.tbRegularExpression.TabIndex = 21;
             // 
             // tbPreparedStatement
             // 
             this.tbPreparedStatement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPreparedStatement.Location = new System.Drawing.Point(164, 153);
+            this.tbPreparedStatement.Location = new System.Drawing.Point(15, 138);
+            this.tbPreparedStatement.Margin = new System.Windows.Forms.Padding(4);
             this.tbPreparedStatement.Name = "tbPreparedStatement";
-            this.tbPreparedStatement.Size = new System.Drawing.Size(350, 26);
+            this.tbPreparedStatement.Size = new System.Drawing.Size(465, 30);
             this.tbPreparedStatement.TabIndex = 20;
-            // 
-            // btnPreparedStatement
-            // 
-            this.btnPreparedStatement.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPreparedStatement.Location = new System.Drawing.Point(535, 147);
-            this.btnPreparedStatement.Name = "btnPreparedStatement";
-            this.btnPreparedStatement.Size = new System.Drawing.Size(120, 40);
-            this.btnPreparedStatement.TabIndex = 26;
-            this.btnPreparedStatement.Text = "GO";
-            this.btnPreparedStatement.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 156);
+            this.label4.Location = new System.Drawing.Point(10, 109);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(150, 20);
+            this.label4.Size = new System.Drawing.Size(182, 25);
             this.label4.TabIndex = 27;
             this.label4.Text = "Prepared statement";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 218);
+            this.label2.Location = new System.Drawing.Point(10, 185);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(145, 20);
+            this.label2.Size = new System.Drawing.Size(179, 25);
             this.label2.TabIndex = 28;
             this.label2.Text = "Regular expression";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 279);
+            this.label3.Location = new System.Drawing.Point(10, 260);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 20);
+            this.label3.Size = new System.Drawing.Size(163, 25);
             this.label3.TabIndex = 29;
             this.label3.Text = "Stored procedure";
             // 
             // btnRegularExpression
             // 
+            this.btnRegularExpression.BackColor = System.Drawing.Color.Transparent;
+            this.btnRegularExpression.BackgroundImage = global::DBD.Properties.Resources.user_add;
+            this.btnRegularExpression.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRegularExpression.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegularExpression.Location = new System.Drawing.Point(535, 209);
+            this.btnRegularExpression.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRegularExpression.Location = new System.Drawing.Point(488, 194);
+            this.btnRegularExpression.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegularExpression.Name = "btnRegularExpression";
-            this.btnRegularExpression.Size = new System.Drawing.Size(120, 40);
+            this.btnRegularExpression.Size = new System.Drawing.Size(50, 50);
             this.btnRegularExpression.TabIndex = 31;
-            this.btnRegularExpression.Text = "GO";
-            this.btnRegularExpression.UseVisualStyleBackColor = true;
+            this.btnRegularExpression.UseVisualStyleBackColor = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 358);
+            this.label6.Location = new System.Drawing.Point(10, 364);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(103, 20);
+            this.label6.Size = new System.Drawing.Size(129, 25);
             this.label6.TabIndex = 32;
             this.label6.Text = "SQL injection";
             // 
             // tbSQLInjection
             // 
             this.tbSQLInjection.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSQLInjection.Location = new System.Drawing.Point(164, 355);
+            this.tbSQLInjection.Location = new System.Drawing.Point(15, 393);
+            this.tbSQLInjection.Margin = new System.Windows.Forms.Padding(4);
             this.tbSQLInjection.Name = "tbSQLInjection";
-            this.tbSQLInjection.Size = new System.Drawing.Size(350, 26);
+            this.tbSQLInjection.Size = new System.Drawing.Size(465, 30);
             this.tbSQLInjection.TabIndex = 33;
             // 
             // btnStoredProcedure
             // 
+            this.btnStoredProcedure.BackColor = System.Drawing.Color.Transparent;
+            this.btnStoredProcedure.BackgroundImage = global::DBD.Properties.Resources.user_add;
+            this.btnStoredProcedure.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnStoredProcedure.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStoredProcedure.Location = new System.Drawing.Point(535, 270);
+            this.btnStoredProcedure.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnStoredProcedure.Location = new System.Drawing.Point(488, 269);
+            this.btnStoredProcedure.Margin = new System.Windows.Forms.Padding(4);
             this.btnStoredProcedure.Name = "btnStoredProcedure";
-            this.btnStoredProcedure.Size = new System.Drawing.Size(120, 40);
+            this.btnStoredProcedure.Size = new System.Drawing.Size(50, 50);
             this.btnStoredProcedure.TabIndex = 34;
-            this.btnStoredProcedure.Text = "GO";
-            this.btnStoredProcedure.UseVisualStyleBackColor = true;
+            this.btnStoredProcedure.UseVisualStyleBackColor = false;
             // 
             // btnSQLInjection
             // 
+            this.btnSQLInjection.BackColor = System.Drawing.Color.Transparent;
+            this.btnSQLInjection.BackgroundImage = global::DBD.Properties.Resources.users_delete;
+            this.btnSQLInjection.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSQLInjection.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSQLInjection.Location = new System.Drawing.Point(535, 349);
+            this.btnSQLInjection.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSQLInjection.Location = new System.Drawing.Point(488, 373);
+            this.btnSQLInjection.Margin = new System.Windows.Forms.Padding(4);
             this.btnSQLInjection.Name = "btnSQLInjection";
-            this.btnSQLInjection.Size = new System.Drawing.Size(120, 40);
+            this.btnSQLInjection.Size = new System.Drawing.Size(50, 50);
             this.btnSQLInjection.TabIndex = 36;
-            this.btnSQLInjection.Text = "GO";
-            this.btnSQLInjection.UseVisualStyleBackColor = true;
+            this.btnSQLInjection.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 90);
+            this.label5.Location = new System.Drawing.Point(10, 28);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 20);
+            this.label5.Size = new System.Drawing.Size(101, 25);
             this.label5.TabIndex = 38;
             this.label5.Text = "Dropdown";
             // 
@@ -180,121 +191,85 @@
             // 
             this.cbDropdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDropdown.FormattingEnabled = true;
-            this.cbDropdown.Location = new System.Drawing.Point(164, 87);
+            this.cbDropdown.Location = new System.Drawing.Point(15, 57);
+            this.cbDropdown.Margin = new System.Windows.Forms.Padding(4);
             this.cbDropdown.Name = "cbDropdown";
-            this.cbDropdown.Size = new System.Drawing.Size(350, 28);
+            this.cbDropdown.Size = new System.Drawing.Size(465, 33);
             this.cbDropdown.TabIndex = 37;
-            // 
-            // btnDropDown
-            // 
-            this.btnDropDown.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDropDown.Location = new System.Drawing.Point(535, 81);
-            this.btnDropDown.Name = "btnDropDown";
-            this.btnDropDown.Size = new System.Drawing.Size(120, 40);
-            this.btnDropDown.TabIndex = 39;
-            this.btnDropDown.Text = "GO";
-            this.btnDropDown.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel1.Location = new System.Drawing.Point(12, 328);
+            this.panel1.Location = new System.Drawing.Point(-34, 338);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(643, 5);
+            this.panel1.Size = new System.Drawing.Size(648, 10);
             this.panel1.TabIndex = 41;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel2.Location = new System.Drawing.Point(12, 56);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(643, 5);
-            this.panel2.TabIndex = 42;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel3.Location = new System.Drawing.Point(8, 406);
+            this.panel3.Location = new System.Drawing.Point(-34, 449);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(647, 5);
+            this.panel3.Size = new System.Drawing.Size(648, 10);
             this.panel3.TabIndex = 42;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(583, 428);
+            this.label1.Location = new System.Drawing.Point(468, 573);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 16);
+            this.label1.Size = new System.Drawing.Size(85, 20);
             this.label1.TabIndex = 44;
             this.label1.Text = "Recreate";
             // 
-            // btnReCreate
+
+            // btnRecreate
             // 
-            this.btnReCreate.BackColor = System.Drawing.Color.DarkGray;
-            this.btnReCreate.BackgroundImage = global::DBD.Properties.Resources.db;
-            this.btnReCreate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnReCreate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReCreate.FlatAppearance.BorderSize = 0;
-            this.btnReCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReCreate.Location = new System.Drawing.Point(586, 457);
-            this.btnReCreate.Name = "btnReCreate";
-            this.btnReCreate.Size = new System.Drawing.Size(62, 59);
-            this.btnReCreate.TabIndex = 43;
-            this.btnReCreate.UseVisualStyleBackColor = false;
+            this.btnRecreate.BackColor = System.Drawing.Color.Transparent;
+            this.btnRecreate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRecreate.BackgroundImage")));
+            this.btnRecreate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRecreate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRecreate.FlatAppearance.BorderSize = 0;
+            this.btnRecreate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRecreate.Location = new System.Drawing.Point(472, 494);
+            this.btnRecreate.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRecreate.Name = "btnRecreate";
+            this.btnRecreate.Size = new System.Drawing.Size(75, 75);
+            this.btnRecreate.TabIndex = 43;
+            this.btnRecreate.UseVisualStyleBackColor = false;
             // 
-            // panel4
+            // btnPreparedStatement
             // 
-            this.panel4.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel4.Location = new System.Drawing.Point(665, 56);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(5, 479);
-            this.panel4.TabIndex = 43;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel5.Location = new System.Drawing.Point(676, 56);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(302, 5);
-            this.panel5.TabIndex = 43;
-            // 
-            // lbUsers
-            // 
-            this.lbUsers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbUsers.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbUsers.Enabled = false;
-            this.lbUsers.Location = new System.Drawing.Point(685, 81);
-            this.lbUsers.Name = "lbUsers";
-            this.lbUsers.Size = new System.Drawing.Size(293, 327);
-            this.lbUsers.TabIndex = 45;
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRefresh.Location = new System.Drawing.Point(775, 419);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(120, 35);
-            this.btnRefresh.TabIndex = 46;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnPreparedStatement.BackColor = System.Drawing.Color.Transparent;
+            this.btnPreparedStatement.BackgroundImage = global::DBD.Properties.Resources.user_add;
+            this.btnPreparedStatement.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPreparedStatement.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPreparedStatement.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPreparedStatement.Location = new System.Drawing.Point(488, 118);
+            this.btnPreparedStatement.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPreparedStatement.Name = "btnPreparedStatement";
+            this.btnPreparedStatement.Size = new System.Drawing.Size(50, 50);
+            this.btnPreparedStatement.TabIndex = 26;
+            this.btnPreparedStatement.UseVisualStyleBackColor = false;
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(990, 547);
-            this.Controls.Add(this.btnRefresh);
-            this.Controls.Add(this.lbUsers);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel4);
+
+            this.BackColor = System.Drawing.Color.DimGray;
+            this.BackgroundImage = global::DBD.Properties.Resources.app_wallpaper;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(569, 618);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnReCreate);
+            this.Controls.Add(this.btnRecreate);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnDropDown);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cbDropdown);
             this.Controls.Add(this.btnSQLInjection);
@@ -309,9 +284,11 @@
             this.Controls.Add(this.tbStoredProcedure);
             this.Controls.Add(this.tbRegularExpression);
             this.Controls.Add(this.tbPreparedStatement);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Main";
-            this.Text = "DBD";
+            this.Text = "Ways of preventing SQL Injection";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -332,16 +309,10 @@
         private System.Windows.Forms.Button btnSQLInjection;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbDropdown;
-        private System.Windows.Forms.Button btnDropDown;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnReCreate;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.ListBox lbUsers;
-        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnRecreate;
     }
 }
 
