@@ -8,8 +8,8 @@ public class DBD_DAO
 {
     // Insert your connection string to use below:
     private string connectionString =
-    @"Server=Y50-70\DEV;Database=Master;User ID=sa;Password=diezel(VH4)";
-    //@"Server=RLXCW\DEV;Database=Master;User Id=sa;Password=hej123";
+    //@"Server=Y50-70\DEV;Database=Master;User ID=sa;Password=diezel(VH4)";
+    @"Server=RLXCW\DEV;Database=Master;User Id=sa;Password=hej123";
     //@"Server=Y50-70\DEV;Database=Master;User ID=sa;Password=diezel(VH4)";
 
 
@@ -111,32 +111,6 @@ public class DBD_DAO
         }
     }
 
-    public List<string> GetSingleUser(int id)
-    {
-        List<string> userList = new List<string>();
-        using (SqlConnection conn = new SqlConnection(connectionString))
-        {
-            conn.Open();
-
-            string getUser = "SELECT * FROM [Users] WHERE UserId = " + id;
-            using (SqlCommand command = new SqlCommand(getUser, conn))
-            {
-                using (SqlDataReader dr = command.ExecuteReader())
-                {
-                    if (dr.HasRows)
-                    {
-                        while (dr.Read())
-                        {
-                            userList.Add(dr.GetString(0));
-                        }
-                    }
-                }
-                conn.Close();
-            }
-            return userList;
-        }
-        
-    }
 
 
 
@@ -146,39 +120,37 @@ public class DBD_DAO
 
 
     //Prepared statement
-    public void PreparedStatement_Unprotected(string username)
+    public List<User> PreparedStatement(string userId)
     {
-        List<string> AllUsers = new List<string>();
-
+        List<User> users = new List<User>();
         using (SqlConnection conn = new SqlConnection(connectionString))
         {
-
             conn.Open();
-            string createUser = String.Format("INSERT INTO User(Username) VALUES('{0}')", username);
-            using (SqlCommand command = new SqlCommand(createUser, conn))
+            string getUser = "USE DBD_Users " +
+                             "SELECT * FROM [Users] WHERE UserId = @UserId";
+            using (SqlCommand command = new SqlCommand(getUser, conn))
             {
-                command.ExecuteNonQuery();
+                try
+                {
+                    command.Parameters.AddWithValue("@UserId", userId);
+                    using (SqlDataReader dr = command.ExecuteReader())
+                    {
+                        if (dr.HasRows)
+                        {
+                            while (dr.Read())
+                            {
+                                users.Add(new User() { Id = dr.GetInt32(1), Username = dr.GetString(0) });
+                            }
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    return users;
+                }
                 conn.Close();
             }
-        }
-    }
-
-    public List<string> PreparedStatement_Protected(string username)
-    {
-        List<string> AllUsers = new List<string>();
-
-        using (SqlConnection conn = new SqlConnection(connectionString))
-        {
-
-            conn.Open();
-            string createUser = "INSERT INTO User (Username) VALUES ( ? )"; ;
-            using (SqlCommand command = new SqlCommand(createUser, conn))
-            {
-                command.Parameters.AddWithValue("@Username", username);
-                command.ExecuteNonQuery();
-                conn.Close();
-            }
-            return AllUsers;
+            return users;
         }
     }
 }
