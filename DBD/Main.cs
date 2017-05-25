@@ -11,7 +11,7 @@ namespace DBD
         {
             InitializeComponent();
             dao.RecreateDB();
-            //SetupDropdown();
+            SetupDropdown();
         }
 
         private void btnRecreate_Click(object sender, EventArgs e)
@@ -21,8 +21,7 @@ namespace DBD
 
         public void SetupDropdown()
         {
-            DBD_DAO dao = new DBD_DAO();
-            foreach(var user in dao.GetUsers())
+            foreach (var user in dao.GetUsers())
             {
                 cbDropdown.Items.Add(user);
             }
