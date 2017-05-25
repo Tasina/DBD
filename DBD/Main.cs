@@ -25,5 +25,11 @@ namespace DBD
             DBD_UsersContext dbContext = new DBD_UsersContext();
             dbContext.Users.FirstOrDefault();
         }
+
+        private void btnRecreate_Click(object sender, EventArgs e)
+        {
+            DBD_DAO dao = new DBD_DAO();
+            dao.RecreateDB();
+        }
     }
 }

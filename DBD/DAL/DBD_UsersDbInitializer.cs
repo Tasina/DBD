@@ -10,9 +10,9 @@ namespace DBD.DAL
     {
         private List<User> users = new List<User>
         {
-            new User { Id=1, Username="Hardy"},
-            new User { Id=2, Username="Tasin"},
-            new User { Id=3, Username="Rasmus"}
+            new User { Username="Hardy"},
+            new User { Username="Tasin"},
+            new User { Username="Rasmus"}
         };
 
         protected override void Seed(DBD_UsersContext context)
@@ -20,6 +20,5 @@ namespace DBD.DAL
             context.Users.AddRange(users);
             base.Seed(context);
         }
-
     }
 }
