@@ -20,18 +20,26 @@ public class DBD_DAO
         {
             conn.Open();
 
-            string selectInjection = "SELECT * FROM [Users] WHERE UserId = " + injectionString;
+            string selectInjection = "USE DBD_Users " +
+                                     "SELECT * FROM [Users] WHERE UserId = " + injectionString;
             using (SqlCommand command = new SqlCommand(selectInjection, conn))
             {
-                using (SqlDataReader dr = command.ExecuteReader())
+                try
                 {
-                    if (dr.HasRows)
+                    using (SqlDataReader dr = command.ExecuteReader())
                     {
-                        while (dr.Read())
+                        if (dr.HasRows)
                         {
-                            users.Add(new User() { Id = dr.GetInt32(1), Username = dr.GetString(0) } );
+                            while (dr.Read())
+                            {
+                                users.Add(new User() { Id = dr.GetInt32(1), Username = dr.GetString(0) });
+                            }
                         }
                     }
+                }
+                catch (Exception e)
+                {
+                    return users;
                 }
                 conn.Close();
             }
@@ -80,15 +88,22 @@ public class DBD_DAO
                               "SELECT * FROM Users";
             using (SqlCommand command = new SqlCommand(getUsers, conn))
             {
-                using (SqlDataReader dr = command.ExecuteReader())
+                try
                 {
-                    if (dr.HasRows)
+                    using (SqlDataReader dr = command.ExecuteReader())
                     {
-                        while (dr.Read())
+                        if (dr.HasRows)
                         {
-                            AllUsers.Add(new User() { Id = dr.GetInt32(1), Username = dr.GetString(0) });
+                            while (dr.Read())
+                            {
+                                AllUsers.Add(new User() { Id = dr.GetInt32(1), Username = dr.GetString(0) });
+                            }
                         }
                     }
+                }
+                catch (Exception e)
+                {
+                    return AllUsers;
                 }
                 conn.Close();
             }

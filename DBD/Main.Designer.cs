@@ -117,7 +117,7 @@
             // btnRegularExpression
             // 
             this.btnRegularExpression.BackColor = System.Drawing.Color.Transparent;
-            this.btnRegularExpression.BackgroundImage = global::DBD.Properties.Resources.user_add;
+            this.btnRegularExpression.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRegularExpression.BackgroundImage")));
             this.btnRegularExpression.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRegularExpression.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegularExpression.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -152,7 +152,7 @@
             // btnStoredProcedure
             // 
             this.btnStoredProcedure.BackColor = System.Drawing.Color.Transparent;
-            this.btnStoredProcedure.BackgroundImage = global::DBD.Properties.Resources.user_add;
+            this.btnStoredProcedure.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnStoredProcedure.BackgroundImage")));
             this.btnStoredProcedure.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnStoredProcedure.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStoredProcedure.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -166,7 +166,7 @@
             // btnSQLInjection
             // 
             this.btnSQLInjection.BackColor = System.Drawing.Color.Transparent;
-            this.btnSQLInjection.BackgroundImage = global::DBD.Properties.Resources.users_delete;
+            this.btnSQLInjection.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSQLInjection.BackgroundImage")));
             this.btnSQLInjection.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSQLInjection.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSQLInjection.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -249,7 +249,7 @@
             // btnPreparedStatement
             // 
             this.btnPreparedStatement.BackColor = System.Drawing.Color.Transparent;
-            this.btnPreparedStatement.BackgroundImage = global::DBD.Properties.Resources.user_add;
+            this.btnPreparedStatement.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPreparedStatement.BackgroundImage")));
             this.btnPreparedStatement.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPreparedStatement.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPreparedStatement.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -274,13 +274,13 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(10, 480);
+            this.label7.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(10, 477);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 25);
+            this.label7.Size = new System.Drawing.Size(91, 28);
             this.label7.TabIndex = 46;
-            this.label7.Text = "DB State";
+            this.label7.Text = "DB State:";
             // 
             // Main
             // 
