@@ -8,8 +8,8 @@ public class DBD_DAO
 {
     // Insert your connection string to use below:
     private string connectionString =
-    //@"Server=Y50-70\DEV;Database=Master;User ID=sa;Password=diezel(VH4)";
-    @"Server=RLXCW\DEV;Database=Master;User Id=sa;Password=hej123";
+    @"Server=Y50-70\DEV;Database=Master;User ID=sa;Password=diezel(VH4)";
+    //@"Server=RLXCW\DEV;Database=Master;User Id=sa;Password=hej123";
     //@"Server=Y50-70\DEV;Database=Master;User ID=sa;Password=diezel(VH4)";
 
 
@@ -52,25 +52,43 @@ public class DBD_DAO
         using (SqlConnection conn = new SqlConnection(connectionString))
         {
             conn.Open();
-            string drop =
+            string createDB =
                 "IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'DBD_Users') " +
                 "CREATE DATABASE DBD_Users ";
-            string recreate =
+            string createTable =
                 "USE DBD_Users " +
                 "IF OBJECT_ID ('Users', 'U') IS NOT NULL " +
                 "DROP TABLE Users " +
                 "CREATE TABLE[Users](Username nvarchar(50), UserId int) " +
                 "INSERT INTO[Users] VALUES('Tasin', 1) " +
                 "INSERT INTO[Users] VALUES('Rasmus', 2) " +
-                "INSERT INTO[Users] VALUES('Hardy', 3)";
+                "INSERT INTO[Users] VALUES('Hardy', 3) ";
+            string dropProcedure =
+                "DROP PROCEDURE USP_GetUser";
+            string createProcedure =
+                "CREATE PROCEDURE USP_GetUser " +
+                "@UserId int " +
+                "AS " +
+                "SET NOCOUNT ON " +
+                "SELECT UserId, Username " +
+                "FROM Users " +
+                "WHERE UserId = @UserId";
 
-            using (SqlCommand dropCommand = new SqlCommand(drop, conn))
+            using (SqlCommand createDBcommand = new SqlCommand(createDB, conn))
             {
-                dropCommand.ExecuteNonQuery();
-                using (SqlCommand createcommand = new SqlCommand(recreate, conn))
+                createDBcommand.ExecuteNonQuery();
+                using (SqlCommand createTableCommand = new SqlCommand(createTable, conn))
                 {
-                    createcommand.ExecuteNonQuery();
-                    conn.Close();
+                    createTableCommand.ExecuteNonQuery();
+                    using (SqlCommand dropProcedureCommand = new SqlCommand(dropProcedure, conn))
+                    {
+                        dropProcedureCommand.ExecuteNonQuery();
+                        using (SqlCommand createProcedureCommand = new SqlCommand(createProcedure, conn))
+                        {
+                            createProcedureCommand.ExecuteNonQuery();
+                            conn.Close();
+                        }
+                    }
                 }
             }
         }
@@ -111,13 +129,38 @@ public class DBD_DAO
         }
     }
 
+    public List<User> StoredProcedure(string id)
+    {
+        List<User> users = new List<User>();
 
+        using (SqlConnection conn = new SqlConnection(connectionString))
+        {
+            conn.Open();
 
-
-
-
-
-
+            string executeProcedure = "EXECUTE USP_GetUser " + id;
+            using (SqlCommand command = new SqlCommand(executeProcedure, conn))
+            {
+                try
+                {
+                    using (SqlDataReader dr = command.ExecuteReader())
+                    {
+                        if (dr.HasRows)
+                        {
+                            while (dr.Read())
+                            {
+                                users.Add(new User() { Id = dr.GetInt32(1), Username = dr.GetString(0) });
+                            }
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    return users;
+                }
+            }
+        }
+        return users;
+    }
 
     //Prepared statement
     public List<User> PreparedStatement(string userId)
