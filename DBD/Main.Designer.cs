@@ -248,7 +248,7 @@
             this.lbDBstate.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.lbDBstate.FormattingEnabled = true;
             this.lbDBstate.Location = new System.Drawing.Point(11, 413);
-            this.lbDBstate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbDBstate.Margin = new System.Windows.Forms.Padding(2);
             this.lbDBstate.Name = "lbDBstate";
             this.lbDBstate.Size = new System.Drawing.Size(331, 82);
             this.lbDBstate.TabIndex = 45;
@@ -294,6 +294,7 @@
             this.Controls.Add(this.tbPreparedStatement);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Main";
             this.Text = "Ways of preventing SQL Injection";
             this.ResumeLayout(false);
